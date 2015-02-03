@@ -2,8 +2,8 @@
 
 With the given suffixes merge multiple files code into one file.
 
-```
-use: ruby codes21.rb /path/to/project rb,js result.txt
-```
+usage:
 
-version: 0.0.1
+```
+codes21 /path/to/project rb,js result.txt
+```

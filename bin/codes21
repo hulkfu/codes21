@@ -4,7 +4,7 @@ require 'codes21'
 
 if ARGV.count != 3
   puts "With the given suffixes merge multiple files code into one file."
-  puts "use: ruby codes21.rb /path/to/project rb,js result.txt"
+  puts "usage: codes21 /path/to/project rb,js result.txt"
   exit
 end
 
