@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'codes21'
+
+if ARGV.count != 3
+  puts "With the given suffixes merge multiple files code into one file."
+  puts "use: ruby codes21.rb /path/to/project rb,js result.txt"
+  exit
+end
+
+path = ARGV[0]
+suffixes = ARGV[1]
+output = ARGV[2]
+
+Codes21.run path, suffixes, output
