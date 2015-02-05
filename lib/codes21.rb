@@ -13,6 +13,7 @@ class Codes21
       item = {title: title, codes: codes}
       @items << item
     end
+    @items
   end
   
   def write_result(result_file_path)
