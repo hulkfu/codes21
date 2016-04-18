@@ -9,19 +9,20 @@ class Codes21
       codes = File.read(file)
       codes.squeeze! "\n"
       puts codes
-    
+
       item = {title: title, codes: codes}
       @items << item
     end
     @items
   end
-  
+
   def write_result(result_file_path)
     File.open(result_file_path, 'w') do |f|
       @items.each do |item|
         f.puts "File:" + item[:title]
         f.puts "Code:"
         f.puts item[:codes]
+        f.puts "\n"
       end
     end
 
