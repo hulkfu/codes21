@@ -7,7 +7,8 @@ class Codes21
 
       puts '*' * 70
       codes = File.read(file)
-      codes.squeeze! "\n"
+      # sb的软件著作权要求不能有空行
+      codes = codes.squeeze("\n")
       puts codes
 
       item = {title: title, codes: codes}

@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'codes21'
+require_relative '../lib/codes21'
 
 if ARGV.count != 3
   puts "With the given suffixes merge multiple files code into one file."
