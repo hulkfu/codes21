@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'codes21'
-  s.version     = '0.1.0'
+  s.version     = '0.1.1'
   s.licenses    = ['MIT']
   s.date        = '2016-04-18'
   s.summary     = "Codes to One."

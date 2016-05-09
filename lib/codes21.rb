@@ -22,7 +22,6 @@ class Codes21
         f.puts "File:" + item[:title]
         f.puts "Code:"
         f.puts item[:codes]
-        f.puts "\n"
       end
     end
 
