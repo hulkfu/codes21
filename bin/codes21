@@ -1,10 +1,15 @@
 #!/usr/bin/env ruby
 
+require 'optparse'
 require_relative '../lib/codes21'
 
-if ARGV.count != 3
-  puts "With the given suffixes merge multiple files code into one file."
-  puts "usage: codes21 /path/to/project rb,js result.txt"
+help = <<-HELP
+With the given suffixes merge multiple files code into one file.
+usage: codes21 /path/to/project rb,js result.txt [-i UTF-8] [-o UTF-8]
+HELP
+
+if ARGV.count < 3
+  puts help
   exit
 end
 
@@ -12,4 +17,23 @@ path = ARGV[0]
 suffixes = ARGV[1]
 output = ARGV[2]
 
-Codes21.run path, suffixes, output
+input_coding = "UTF-8"
+output_coding = "UTF-8"
+
+OptionParser.new do |opts|
+  opts.banner = "usage: codes21 /path/to/project rb,js result.txt [-i=UTF-8] [-o=UTF-8]"
+  opts.on("-iENCODE", "Input file coding") do |coding|
+    input_coding = coding
+  end
+
+  opts.on("-oENCODE", "Output file coding") do |coding|
+    output_coding = coding
+  end
+
+  opts.on("-h") do
+    exit
+  end
+
+end.parse!
+
+Codes21.run path, suffixes, output, input_coding, output_coding
