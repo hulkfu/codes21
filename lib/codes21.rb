@@ -25,6 +25,7 @@ class Codes21
         codes = item[:codes]
 
         content = title + "\n" + code_label + "\n" + codes + "\n"
+        content = content.squeeze("\n")
 
         f.print content.encode(coding)
       end
